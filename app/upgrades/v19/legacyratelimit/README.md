@@ -1,1 +1,0 @@
-The legacy ratelimit types aren't required for this migration (since the types are the same), but they're used as a sanity check in the unit tests.

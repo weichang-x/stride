@@ -1,3 +1,0 @@
-FROM stridezone:stride
-
-CMD strided start --reject-config-defaults
