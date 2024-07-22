@@ -42,52 +42,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 <!-- GH ACTIONS TEMPLATE - INSERT NEW VERSION HERE -->
 
-## [v23.0.0](https://github.com/Stride-Labs/stride/releases/tag/v23.0.0) - 2024-07-19
-
-### On-Chain changes
-1. added airdrop module ([#1235](https://github.com/Stride-Labs/stride/pull/1235))
-2. removed trade route dead code ([#1189](https://github.com/Stride-Labs/stride/pull/1189))
-3. added wasm light client ([#1224](https://github.com/Stride-Labs/stride/pull/1224)), ([#1231](https://github.com/Stride-Labs/stride/pull/1231))
-4. consolidated cli txs in to same file  ([#1211](https://github.com/Stride-Labs/stride/pull/1211))
-5. v23 upgrade handler (final) ([#1243](https://github.com/Stride-Labs/stride/pull/1243))
-6. close delegation channel tx ([#1242](https://github.com/Stride-Labs/stride/pull/1242))
-7. v23 Import Paths ([#1246](https://github.com/Stride-Labs/stride/pull/1246))
-8. version bumps ([#1187](https://github.com/Stride-Labs/stride/pull/1187)), ([#1228](https://github.com/Stride-Labs/stride/pull/1228))
-9. Add Default Config Settings ([#1245](https://github.com/Stride-Labs/stride/pull/1245))
-
-### Off-Chain changes
-1. Faster `make sync` ([#1209](https://github.com/Stride-Labs/stride/pull/1209))
-2. Replace `docker-compose` with `docker compose` ([#1221](https://github.com/Stride-Labs/stride/pull/1221))
-3. removed version from docker compose ([#1227](https://github.com/Stride-Labs/stride/pull/1227))
-
-
-## [v22.0.0](https://github.com/Stride-Labs/stride/releases/tag/v22.0.0) - 2024-04-16
-
-### On-Chain changes
-1. added v22 upgrade handler ([#1174](https://github.com/Stride-Labs/stride/pull/1174))
-2. Fix validator weight check ([#1176](https://github.com/Stride-Labs/stride/pull/1176))
-3. added stToken burn to unregister host zone function ([#1175](https://github.com/Stride-Labs/stride/pull/1175))
-4. added ibc-hooks ([#1173](https://github.com/Stride-Labs/stride/pull/1173))
-5. added event for redeem stake ([#1182](https://github.com/Stride-Labs/stride/pull/1182))
-6. parameterize max messages per ICA tx on host zone ([#1177](https://github.com/Stride-Labs/stride/pull/1177))
-7. remove GetConnectionIdFromICAPort, use connection ID from host zone ([#1179](https://github.com/Stride-Labs/stride/pull/1179))
-8. v22 Import Paths ([#1183](https://github.com/Stride-Labs/stride/pull/1183))
-9. fixed ibc hooks store key ([#1184](https://github.com/Stride-Labs/stride/pull/1184))
-
-### Off-Chain changes
-1. v21 Changelog ([#1168](https://github.com/Stride-Labs/stride/pull/1168))
-
-
-## [v21.0.0](https://github.com/Stride-Labs/stride/releases/tag/v21.0.0) - 2024-03-27
-
-### On-Chain changes
-1. added help info to toggle command ([#1163](https://github.com/Stride-Labs/stride/pull/1163))
-2. added v21 upgrade handler ([#1165](https://github.com/Stride-Labs/stride/pull/1165))
-3. updated rebate to use native denom instead of reward denom ([#1162](https://github.com/Stride-Labs/stride/pull/1162))
-4. added function to unregister host zone ([#1166](https://github.com/Stride-Labs/stride/pull/1166))
-5. v21 Import Paths ([#1167](https://github.com/Stride-Labs/stride/pull/1167))
-
-
 ## [v20.0.0](https://github.com/Stride-Labs/stride/releases/tag/v20.0.0) - 2024-03-21
 
 ### On-Chain changes
