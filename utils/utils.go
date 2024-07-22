@@ -15,18 +15,7 @@ import (
 
 	errorsmod "cosmossdk.io/errors"
 	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
-
-	channeltypes "github.com/cosmos/ibc-go/v7/modules/core/04-channel/types"
 )
-
-func FilterDepositRecords(arr []recordstypes.DepositRecord, condition func(recordstypes.DepositRecord) bool) (ret []recordstypes.DepositRecord) {
-	for _, elem := range arr {
-		if condition(elem) {
-			ret = append(ret, elem)
-		}
-	}
-	return ret
-}
 
 func Int64ToCoinString(amount int64, denom string) string {
 	return strconv.FormatInt(amount, 10) + denom
@@ -192,21 +181,6 @@ func ContainsString(s []string, e string) bool {
 	return false
 }
 
-// Convert any bech32 to stride address
-func ConvertAddressToStrideAddress(address string) string {
-	_, bz, err := bech32.DecodeAndConvert(address)
-	if err != nil {
-		return ""
-	}
-
-	bech32Addr, err := bech32.ConvertAndEncode(config.Bech32PrefixAccAddr, bz)
-	if err != nil {
-		return ""
-	}
-
-	return bech32Addr
-}
-
 // Returns a log string with a chainId and tab as the prefix
 // Ex:
 //
@@ -232,23 +206,6 @@ func logCallbackWithHostZone(chainId string, callbackId string, callbackType str
 //	| COSMOSHUB-4   |  DELEGATE ICACALLBACK  |  string
 func LogICACallbackWithHostZone(chainId string, callbackId string, s string, a ...any) string {
 	return logCallbackWithHostZone(chainId, callbackId, "ICACALLBACK", s, a...)
-}
-
-// Returns a log string with a chain Id and icacallback as a prefix, and status of the callback
-// Ex:
-//
-//	| COSMOSHUB-4   |  DELEGATE ICACALLBACK  |  ICA SUCCESS, Packet: ...
-func LogICACallbackStatusWithHostZone(chainId string, callbackId string, status icacallbacktypes.AckResponseStatus, packet channeltypes.Packet) string {
-	var statusMsg string
-	switch status {
-	case icacallbacktypes.AckResponseStatus_SUCCESS:
-		statusMsg = "ICA SUCCESSFUL"
-	case icacallbacktypes.AckResponseStatus_TIMEOUT:
-		statusMsg = "ICA TIMEOUT"
-	default:
-		statusMsg = "ICA FAILED (ack error)"
-	}
-	return logCallbackWithHostZone(chainId, callbackId, "ICACALLBACK", "%s, Packet: %+v", statusMsg, packet)
 }
 
 // Returns a log string with a chain Id and icqcallback as a prefix
